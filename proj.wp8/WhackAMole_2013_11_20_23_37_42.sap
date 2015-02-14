@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ProfilerSession Type="ExecutionPerformanceAnalysis" Name="WhackAMole2898774002">
+  <TargetApplication Name="WhackAMole_Debug_Win32" SourceProject="WhackAMole.vcxproj" Type="WindowsPhoneNative">
+    <ApplicationBinary Path="WP8\Win32\Debug\WhackAMole\WhackAMole_Debug_Win32.xap" Timestamp="13/11/2013 5:38:32 CH" />
+    <ApplicationIconPath Path="" />
+    <SymbolPaths>
+      <Path Value=".\C:\Users\Le\Downloads\Compressed\cocos2d-x-2.2\cocos2d-x-2.2\projects\WhackAMole\proj.wp8\WP8\Win32\Debug\WhackAMole\" />
+    </SymbolPaths>
+  </TargetApplication>
+  <Settings>
+    <Probe Name="Visual">
+      <CollectElementLevelCosting Enabled="True" />
+      <CollectSnapshots Enabled="True" Interval="1000" Resampling="2" />
+      <CollectMediaEvents Enabled="False" />
+      <CollectCacheDetails Enabled="False" />
+    </Probe>
+    <Probe Name="Code">
+      <SampleCallStack Enabled="True" Depth="4294967295" Interval="10" />
+      <CollectPerformanceCounters Enabled="False" />
+    </Probe>
+    <Probe Name="Memory">
+      <MemoryCallStack Enabled="True" Depth="4" />
+      <ObjectTree Enabled="True" Interval="5" />
+    </Probe>
+  </Settings>
+  <Data>
+    <Logs>
+      <File Type="NativeFormat" Path="PerfLogs\WhackAMole2898774002\WhackAMole_2013_11_20_23_37_42.vspx" />
+    </Logs>
+  </Data>
+  <TargetDeviceSettings OSVersion="8.0.9903" AvailablePhysicalMemoryAtStartup="0" ProcessorArchitectureType="Intel" ProcessorInformation="X86" IsEmulator="True" />
+</ProfilerSession>

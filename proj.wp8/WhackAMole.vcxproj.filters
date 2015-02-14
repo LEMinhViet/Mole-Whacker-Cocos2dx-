@@ -1,0 +1,212 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Assets">
+      <UniqueIdentifier>17b52f90-9b33-4188-8a0e-808582bbabbc</UniqueIdentifier>
+      <Extensions>ico;bmp;dlg;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;resw;resjson</Extensions>
+    </Filter>
+    <Filter Include="Classes">
+      <UniqueIdentifier>{75a4d4c5-4978-4bf9-a391-fbbd7b2d35b3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Assets\Resources">
+      <UniqueIdentifier>{c09e6c12-88ba-4ac4-a100-934ae83cb526}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Assets\Resources\fonts">
+      <UniqueIdentifier>{c20ecf31-94f4-4ac0-bac7-f3d6f170c765}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Assets\Resources\Images">
+      <UniqueIdentifier>{5da6d924-ef09-4d62-a894-7cd07338fda1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Scene">
+      <UniqueIdentifier>{48c9c7fe-aa72-43da-83b2-8cbfaef3f229}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Model">
+      <UniqueIdentifier>{3bea4c66-ffcf-44d9-8a3c-86630d5f7ecb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Manager">
+      <UniqueIdentifier>{191f306e-22aa-4902-ab62-9d91e6adb643}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Utils">
+      <UniqueIdentifier>{9619df59-8d7e-42b7-bd7a-e573ba6f52dc}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Assets\ApplicationIcon.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\AlignmentGrid.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\Tiles\FlipCycleTileLarge.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\Tiles\FlipCycleTileMedium.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\Tiles\FlipCycleTileSmall.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\Tiles\IconicTileMediumLarge.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\Tiles\IconicTileSmall.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\Resources\Images\main_menu_buttons.png">
+      <Filter>Assets\Resources\Images</Filter>
+    </Image>
+    <Image Include="Assets\Resources\Images\m_bg.png">
+      <Filter>Assets\Resources\Images</Filter>
+    </Image>
+    <Image Include="Assets\Resources\Images\m_logo.png">
+      <Filter>Assets\Resources\Images</Filter>
+    </Image>
+    <Image Include="Assets\Resources\Images\m_mainPic.png">
+      <Filter>Assets\Resources\Images</Filter>
+    </Image>
+    <Image Include="Assets\Resources\Images\info.png">
+      <Filter>Assets\Resources\Images</Filter>
+    </Image>
+    <Image Include="Assets\Resources\Images\g_mouses.png">
+      <Filter>Assets\Resources\Images</Filter>
+    </Image>
+    <Image Include="Assets\Resources\Images\g_bg.png">
+      <Filter>Assets\Resources\Images</Filter>
+    </Image>
+    <Image Include="Assets\Resources\Images\g_sky.jpg">
+      <Filter>Assets\Resources\Images</Filter>
+    </Image>
+    <Image Include="Assets\Resources\Images\m_blackBg.png">
+      <Filter>Assets\Resources\Images</Filter>
+    </Image>
+    <Image Include="Assets\Resources\Images\g_result.png">
+      <Filter>Assets\Resources\Images</Filter>
+    </Image>
+    <Image Include="Assets\Resources\Images\endMenu.png">
+      <Filter>Assets\Resources\Images</Filter>
+    </Image>
+    <Image Include="Assets\Resources\Images\Logo.jpg">
+      <Filter>Assets\Resources\Images</Filter>
+    </Image>
+    <Image Include="Assets\Resources\fonts\font.png">
+      <Filter>Assets\Resources\fonts</Filter>
+    </Image>
+    <Image Include="Assets\Resources\Images\inGame_Elements.png">
+      <Filter>Assets\Resources\Images</Filter>
+    </Image>
+    <Image Include="Assets\Resources\Images\m_Texts.png">
+      <Filter>Assets\Resources\Images</Filter>
+    </Image>
+    <Image Include="Assets\Resources\Images\help.png">
+      <Filter>Assets\Resources\Images</Filter>
+    </Image>
+    <Image Include="Assets\Resources\Images\gauss.png">
+      <Filter>Assets\Resources\Images</Filter>
+    </Image>
+    <Image Include="Assets\Resources\Images\h_content.png">
+      <Filter>Assets\Resources\Images</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="WhackAMole.cpp" />
+    <ClCompile Include="..\Classes\AppDelegate.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="GameScene.cpp">
+      <Filter>Classes\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\HelloWorldScene.cpp">
+      <Filter>Classes\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Mouse.cpp">
+      <Filter>Classes\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="MouseManager.cpp">
+      <Filter>Classes\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="EndScreen.cpp">
+      <Filter>Classes\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="PauseScene.cpp">
+      <Filter>Classes\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="LoadingScene.cpp">
+      <Filter>Classes\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="HelpScreen.cpp">
+      <Filter>Classes\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="DataManager.cpp">
+      <Filter>Classes\Manager</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="WhackAMole.h" />
+    <ClInclude Include="..\Classes\AppDelegate.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\AppMacros.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="GameScene.h">
+      <Filter>Classes\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\HelloWorldScene.h">
+      <Filter>Classes\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Mouse.h">
+      <Filter>Classes\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="MouseManager.h">
+      <Filter>Classes\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="EndScreen.h">
+      <Filter>Classes\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="PauseScreen.h">
+      <Filter>Classes\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="LoadingScene.h">
+      <Filter>Classes\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="AsyncLoaders.h">
+      <Filter>Classes\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="HelpScreen.h">
+      <Filter>Classes\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="DataManager.h">
+      <Filter>Classes\Manager</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="WMAppManifest.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Resources\Images\main_menu_buttons.plist">
+      <Filter>Assets\Resources\Images</Filter>
+    </None>
+    <None Include="WhackAMole_2013_11_20_23_37_42.sap" />
+    <None Include="Assets\Resources\Images\g_mouses.plist">
+      <Filter>Assets\Resources\Images</Filter>
+    </None>
+    <None Include="Assets\Resources\Images\endMenu.plist">
+      <Filter>Assets\Resources\Images</Filter>
+    </None>
+    <None Include="Assets\Resources\Images\inGame_Elements.plist">
+      <Filter>Assets\Resources\Images</Filter>
+    </None>
+    <None Include="Assets\Resources\Images\m_Texts.plist">
+      <Filter>Assets\Resources\Images</Filter>
+    </None>
+    <None Include="Assets\Resources\Images\gauss.plist">
+      <Filter>Assets\Resources\Images</Filter>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="Assets\Resources\fonts\font.fnt">
+      <Filter>Assets\Resources\fonts</Filter>
+    </Font>
+  </ItemGroup>
+</Project>

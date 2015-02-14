@@ -1,0 +1,308 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\cpprestsdk.2.1.0\build\native\cpprestsdk.props" Condition="Exists('packages\cpprestsdk.2.1.0\build\native\cpprestsdk.props')" />
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|ARM">
+      <Configuration>Debug</Configuration>
+      <Platform>ARM</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|ARM">
+      <Configuration>Release</Configuration>
+      <Platform>ARM</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{2ac777ca-2d3b-41c8-98ac-b6ed1a4b0988}</ProjectGuid>
+    <RootNamespace>WhackAMole</RootNamespace>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <MinimumVisualStudioVersion>11.0</MinimumVisualStudioVersion>
+    <XapOutputs>true</XapOutputs>
+    <XapFilename>WhackAMole_$(Configuration)_$(Platform).xap</XapFilename>
+    <WinMDAssembly>true</WinMDAssembly>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v110_wp80</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v110_wp80</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <PlatformToolset>v110_wp80</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <PlatformToolset>v110_wp80</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros">
+    <NuGetPackageImportStamp>71ea7f50</NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)WP8\$(Platform)\$(Configuration)\$(MSBuildProjectName)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)WP8\$(Platform)\$(Configuration)\$(MSBuildProjectName)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)WP8\$(Platform)\$(Configuration)\$(MSBuildProjectName)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)WP8\$(Platform)\$(Configuration)\$(MSBuildProjectName)\</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>PSAPI_VERSION=2;WP8;_WP8;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>
+      </PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\..\cocos2dx\platform\third_party\winrt\angleproject\include;$(ProjectDir)..\..\..\cocos2dx\platform\third_party\winrt\angleproject\samples\gles2_book\Common;$(ProjectDir)..\..\..\cocos2dx\platform\wp8;$(ProjectDir)..\..\..\cocos2dx;$(ProjectDir)..\..\..\cocos2dx\include;$(ProjectDir)..\..\..\cocos2dx\kazmath\include;$(ProjectDir)..\..\..\cocos2dx\platform\winrt;..\Classes;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <CompileAsWinRT>true</CompileAsWinRT>
+      <PrecompiledHeaderOutputFile />
+      <DisableSpecificWarnings>4267;4251;4244;4453;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>d3d11.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <GenerateWindowsMetadata>false</GenerateWindowsMetadata>
+      <IgnoreSpecificDefaultLibraries>ole32.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <AdditionalOptions>/IGNORE:4264 %(AdditionalOptions)</AdditionalOptions>
+      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
+    </Link>
+    <PreBuildEvent>
+      <Command>xcopy "$(ProjectDir)..\Resources" "$(ProjectDir)Assets\Resources" /s /y /i /q &amp; echo Copied Resource files to \Assets\Resources</Command>
+    </PreBuildEvent>
+    <PreBuildEvent>
+      <Message>Copy Resources to Assets folder</Message>
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>PSAPI_VERSION=2;WP8;_WP8;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>
+      </PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\..\cocos2dx\platform\third_party\winrt\angleproject\include;$(ProjectDir)..\..\..\cocos2dx\platform\third_party\winrt\angleproject\samples\gles2_book\Common;$(ProjectDir)..\..\..\cocos2dx\platform\wp8;$(ProjectDir)..\..\..\cocos2dx;$(ProjectDir)..\..\..\cocos2dx\include;$(ProjectDir)..\..\..\cocos2dx\kazmath\include;$(ProjectDir)..\..\..\cocos2dx\platform\winrt;..\Classes;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <CompileAsWinRT>true</CompileAsWinRT>
+      <PrecompiledHeaderOutputFile />
+      <DisableSpecificWarnings>4267;4251;4244;4453;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>d3d11.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <GenerateWindowsMetadata>false</GenerateWindowsMetadata>
+      <IgnoreSpecificDefaultLibraries>ole32.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <AdditionalOptions>/IGNORE:4264 %(AdditionalOptions)</AdditionalOptions>
+    </Link>
+    <PreBuildEvent>
+      <Command>xcopy "$(ProjectDir)..\Resources" "$(ProjectDir)Assets\Resources" /s /y /i /q &amp; echo Copied Resource files to \Assets\Resources</Command>
+    </PreBuildEvent>
+    <PreBuildEvent>
+      <Message>Copy Resources to Assets folder</Message>
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+    <ClCompile>
+      <PreprocessorDefinitions>PSAPI_VERSION=2;WP8;_WP8;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>
+      </PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\..\cocos2dx\platform\third_party\winrt\angleproject\include;$(ProjectDir)..\..\..\cocos2dx\platform\third_party\winrt\angleproject\samples\gles2_book\Common;$(ProjectDir)..\..\..\cocos2dx\platform\wp8;$(ProjectDir)..\..\..\cocos2dx;$(ProjectDir)..\..\..\cocos2dx\include;$(ProjectDir)..\..\..\cocos2dx\kazmath\include;$(ProjectDir)..\..\..\cocos2dx\platform\winrt;..\Classes;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <CompileAsWinRT>true</CompileAsWinRT>
+      <PrecompiledHeaderOutputFile />
+      <DisableSpecificWarnings>4267;4251;4244;4453;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>d3d11.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <GenerateWindowsMetadata>false</GenerateWindowsMetadata>
+      <IgnoreSpecificDefaultLibraries>ole32.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <AdditionalOptions>/IGNORE:4264 %(AdditionalOptions)</AdditionalOptions>
+      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
+    </Link>
+    <PreBuildEvent>
+      <Command>xcopy "$(ProjectDir)..\Resources" "$(ProjectDir)Assets\Resources" /s /y /i /q &amp; echo Copied Resource files to \Assets\Resources</Command>
+    </PreBuildEvent>
+    <PreBuildEvent>
+      <Message>Copy Resources to Assets folder</Message>
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+    <ClCompile>
+      <PreprocessorDefinitions>PSAPI_VERSION=2;WP8;_WP8;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>
+      </PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\..\cocos2dx\platform\third_party\winrt\angleproject\include;$(ProjectDir)..\..\..\cocos2dx\platform\third_party\winrt\angleproject\samples\gles2_book\Common;$(ProjectDir)..\..\..\cocos2dx\platform\wp8;$(ProjectDir)..\..\..\cocos2dx;$(ProjectDir)..\..\..\cocos2dx\include;$(ProjectDir)..\..\..\cocos2dx\kazmath\include;$(ProjectDir)..\..\..\cocos2dx\platform\winrt;..\Classes;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <CompileAsWinRT>true</CompileAsWinRT>
+      <PrecompiledHeaderOutputFile />
+      <DisableSpecificWarnings>4267;4251;4244;4453;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>d3d11.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <GenerateWindowsMetadata>false</GenerateWindowsMetadata>
+      <IgnoreSpecificDefaultLibraries>ole32.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <AdditionalOptions>/IGNORE:4264 %(AdditionalOptions)</AdditionalOptions>
+    </Link>
+    <PreBuildEvent>
+      <Command>xcopy "$(ProjectDir)..\Resources" "$(ProjectDir)Assets\Resources" /s /y /i /q &amp; echo Copied Resource files to \Assets\Resources</Command>
+    </PreBuildEvent>
+    <PreBuildEvent>
+      <Message>Copy Resources to Assets folder</Message>
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Reference Include="platform.winmd">
+      <IsWinMDFile>true</IsWinMDFile>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Assets\ApplicationIcon.png" />
+    <Image Include="Assets\AlignmentGrid.png" />
+    <Image Include="Assets\Resources\fonts\font.png" />
+    <Image Include="Assets\Resources\Images\endMenu.png" />
+    <Image Include="Assets\Resources\Images\gauss.png" />
+    <Image Include="Assets\Resources\Images\g_bg.png" />
+    <Image Include="Assets\Resources\Images\g_mouses.png" />
+    <Image Include="Assets\Resources\Images\g_result.png" />
+    <Image Include="Assets\Resources\Images\g_sky.jpg" />
+    <Image Include="Assets\Resources\Images\help.png" />
+    <Image Include="Assets\Resources\Images\h_content.png" />
+    <Image Include="Assets\Resources\Images\info.png" />
+    <Image Include="Assets\Resources\Images\inGame_Elements.png" />
+    <Image Include="Assets\Resources\Images\Logo.jpg" />
+    <Image Include="Assets\Resources\Images\main_menu_buttons.png" />
+    <Image Include="Assets\Resources\Images\m_bg.png" />
+    <Image Include="Assets\Resources\Images\m_blackBg.png" />
+    <Image Include="Assets\Resources\Images\m_logo.png" />
+    <Image Include="Assets\Resources\Images\m_mainPic.png" />
+    <Image Include="Assets\Resources\Images\m_Texts.png" />
+    <Image Include="Assets\Tiles\FlipCycleTileLarge.png" />
+    <Image Include="Assets\Tiles\FlipCycleTileMedium.png" />
+    <Image Include="Assets\Tiles\FlipCycleTileSmall.png" />
+    <Image Include="Assets\Tiles\IconicTileMediumLarge.png" />
+    <Image Include="Assets\Tiles\IconicTileSmall.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="WMAppManifest.xml">
+      <SubType>Designer</SubType>
+    </Xml>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Classes\AppDelegate.h" />
+    <ClInclude Include="..\Classes\AppMacros.h" />
+    <ClInclude Include="..\Classes\HelloWorldScene.h" />
+    <ClInclude Include="AsyncLoaders.h" />
+    <ClInclude Include="DataManager.h" />
+    <ClInclude Include="EndScreen.h" />
+    <ClInclude Include="GameScene.h" />
+    <ClInclude Include="HelpScreen.h" />
+    <ClInclude Include="LoadingScene.h" />
+    <ClInclude Include="Mouse.h" />
+    <ClInclude Include="MouseManager.h" />
+    <ClInclude Include="PauseScreen.h" />
+    <ClInclude Include="WhackAMole.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Classes\AppDelegate.cpp" />
+    <ClCompile Include="..\Classes\HelloWorldScene.cpp" />
+    <ClCompile Include="DataManager.cpp" />
+    <ClCompile Include="EndScreen.cpp" />
+    <ClCompile Include="GameScene.cpp" />
+    <ClCompile Include="HelpScreen.cpp" />
+    <ClCompile Include="LoadingScene.cpp" />
+    <ClCompile Include="Mouse.cpp" />
+    <ClCompile Include="MouseManager.cpp" />
+    <ClCompile Include="PauseScene.cpp" />
+    <ClCompile Include="WhackAMole.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\cocos2dx\platform\third_party\winrt\angleproject\src\libEGL\libEGL_phone.vcxproj">
+      <Project>{ab42a170-e370-4707-8cc6-1c51349c146f}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\cocos2dx\platform\third_party\winrt\angleproject\src\libGLESv2\libGLESv2_phone.vcxproj">
+      <Project>{0592f9c3-d727-4d41-bc9e-e43b269ad877}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\cocos2dx\proj.wp8\libcocos2d.vcxproj">
+      <Project>{871aadce-3905-48ef-ac2b-c67c335b0dcc}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="Assets\Resources\fonts\font.fnt">
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</DeploymentContent>
+      <FileType>Document</FileType>
+    </Font>
+    <None Include="Assets\Resources\Images\endMenu.plist">
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</DeploymentContent>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">true</DeploymentContent>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">true</DeploymentContent>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</DeploymentContent>
+    </None>
+    <None Include="Assets\Resources\Images\gauss.plist">
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</DeploymentContent>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">true</DeploymentContent>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</DeploymentContent>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">true</DeploymentContent>
+    </None>
+    <None Include="Assets\Resources\Images\g_mouses.plist">
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</DeploymentContent>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">true</DeploymentContent>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">true</DeploymentContent>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</DeploymentContent>
+    </None>
+    <None Include="Assets\Resources\Images\inGame_Elements.plist">
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</DeploymentContent>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">true</DeploymentContent>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</DeploymentContent>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">true</DeploymentContent>
+    </None>
+    <None Include="Assets\Resources\Images\main_menu_buttons.plist">
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</DeploymentContent>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">true</DeploymentContent>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">true</DeploymentContent>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</DeploymentContent>
+    </None>
+    <None Include="Assets\Resources\Images\m_Texts.plist">
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</DeploymentContent>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">true</DeploymentContent>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</DeploymentContent>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">true</DeploymentContent>
+    </None>
+    <None Include="packages.config" />
+    <None Include="WhackAMole_2013_11_20_23_37_42.sap" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsPhone\v$(TargetPlatformVersion)\Microsoft.Cpp.WindowsPhone.$(TargetPlatformVersion).targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="packages\cpprestsdk.2.1.0\build\native\cpprestsdk.targets" Condition="Exists('packages\cpprestsdk.2.1.0\build\native\cpprestsdk.targets')" />
+  </ImportGroup>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\cpprestsdk.2.1.0\build\native\cpprestsdk.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\cpprestsdk.2.1.0\build\native\cpprestsdk.props'))" />
+    <Error Condition="!Exists('packages\cpprestsdk.2.1.0\build\native\cpprestsdk.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\cpprestsdk.2.1.0\build\native\cpprestsdk.targets'))" />
+  </Target>
+</Project>
